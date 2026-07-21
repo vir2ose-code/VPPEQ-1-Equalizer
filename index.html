@@ -6,188 +6,217 @@
     <title>VPPEQ-1 Equalizer | vir2oseSOUND</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131b2e;
-            --accent-blue: #00d2ff;
-            --accent-purple: #7928ca;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --gold-main: #ffd700;
+            --gold-dark: #b8860b;
+            --gold-glow: rgba(255, 215, 0, 0.4);
+            --bg-dark: rgba(10, 10, 12, 0.85);
+            --card-bg: rgba(15, 18, 25, 0.75);
+            --text-light: #f3f4f6;
+            --text-gold: #e6ca65;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            /* Hier wird dein Photoshop-Zahnrad-Hintergrund eingebunden */
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-light);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             align-items: center;
+            justify-content: space-between;
         }
+
+        /* Dunkler Overlay-Effekt für bessere Lesbarkeit */
+        .overlay {
+            width: 100%;
+            min-height: 100vh;
+            background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         header {
             width: 100%;
             max-width: 1100px;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 1rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-start;
         }
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: var(--gold-main);
+            text-shadow: 0 0 12px var(--gold-glow);
         }
+
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             width: 100%;
-            padding: 2rem 1.5rem;
+            padding: 1rem 1.5rem 3rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            margin: auto;
         }
+
         .hero-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            color: var(--gold-main);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 20px var(--gold-glow);
         }
+
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            color: #d1d5db;
+            max-width: 750px;
+            margin-bottom: 2.5rem;
             line-height: 1.6;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
+
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
+
         .btn {
-            padding: 0.9rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
+            padding: 1rem 2.2rem;
+            font-size: 1.05rem;
+            font-weight: 800;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
         }
+
+        /* Goldener Haupt-Button */
         .btn-primary {
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+            color: #000;
+            border: 1px solid #ffe600;
+            box-shadow: 0 0 15px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.5);
         }
+
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+            background: linear-gradient(135deg, #ffe033 0%, #d49b0e 100%);
         }
+
+        /* Sekundärer dunkler Button mit Goldrand */
         .btn-secondary {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(15, 15, 20, 0.8);
+            color: var(--gold-main);
+            border: 1px solid var(--gold-dark);
+            backdrop-filter: blur(5px);
         }
+
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            transform: translateY(-2px);
+            background-color: rgba(255, 215, 0, 0.15);
+            border-color: var(--gold-main);
+            transform: translateY(-3px);
         }
-        .preview-container {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 4rem;
-        }
-        .preview-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             width: 100%;
-            margin-bottom: 4rem;
         }
+
         .feature-card {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gold-dark);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
             text-align: left;
+            transition: border-color 0.3s ease;
         }
+
+        .feature-card:hover {
+            border-color: var(--gold-main);
+        }
+
         .feature-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-blue);
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--gold-main);
         }
+
         .feature-card p {
-            color: var(--text-muted);
+            color: #9ca3af;
             font-size: 0.95rem;
             line-height: 1.5;
         }
+
         footer {
-            margin-top: auto;
             width: 100%;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6b7280;
+            font-size: 0.85rem;
+            background-color: rgba(5, 5, 5, 0.9);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">vir2oseSOUND</div>
-    </header>
-    <div class="container">
-        <h1 class="hero-title">VPPEQ-1 Equalizer</h1>
-        <p class="hero-subtitle">
-            Professional Parametric Equalizer inspired by classic boutique hardware. 
-            Delivering musical warmth, harmonic saturation, and pristine clarity for modern producers.
-        </p>
-        <div class="cta-buttons">
-            <!-- Hier ist dein korrigierter Stripe-Link -->
-            <a href="https://buy.stripe.com/test_4gMeVc7i0dDi8Hf9p29sk00" class="btn btn-primary" target="_blank">Jetzt Kaufen (39,99 €)</a>
-            <a href="https://github.com/vir2ose-code/VPPEQ-1-Equalizer/releases" class="btn btn-secondary" target="_blank">14-Tage Trial Download</a>
-        </div>
-        <div class="preview-container">
-            <!-- Zieht sich das Vorschaubild direkt aus deinen GitHub Releases -->
-            <img src="https://raw.githubusercontent.com/vir2ose-code/VPPEQ-1-Equalizer/main/README.md" id="plugin-img" alt="VPPEQ-1 Equalizer UI" onerror="this.src='https://user-images.githubusercontent.com/placeholder.png';">
-        </div>
-        <div class="features">
-            <div class="feature-card">
-                <h3>Analog Character</h3>
-                <p>Transformer emulation with 4 legendary curves (SSL, NEVE, API, PULTEC) for smooth saturation.</p>
+    <div class="overlay">
+        <header>
+            <div class="logo">vir2oseSOUND</div>
+        </header>
+
+        <div class="container">
+            <h1 class="hero-title">VPPEQ-1 Equalizer</h1>
+            <p class="hero-subtitle">
+                Professional Parametric Equalizer inspired by classic boutique hardware. 
+                Delivering musical warmth, harmonic saturation, and pristine clarity for modern producers.
+            </p>
+
+            <div class="cta-buttons">
+                <!-- Dein Live/Test Stripe-Link mit 39,99 € -->
+                <a href="https://buy.stripe.com/test_4gMeVc7i0dDi8Hf9p29sk00" class="btn btn-primary" target="_blank">Jetzt Kaufen (39,99 €)</a>
+                <a href="https://github.com/vir2ose-code/VPPEQ-1-Equalizer/releases" class="btn btn-secondary" target="_blank">14-Tage Trial Download</a>
             </div>
-            <div class="feature-card">
-                <h3>Pro DSP & Metering</h3>
-                <p>Custom VU-metering, phase alignment, and high-precision audio processing built on JUCE/C++.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Modern Scalable UI</h3>
-                <p>Clean, hardware-inspired interface with 100% smooth scaling for crisp modern displays.</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Analog Character</h3>
+                    <p>Transformer emulation with 4 legendary curves (SSL, NEVE, API, PULTEC) for smooth saturation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pro DSP & Metering</h3>
+                    <p>Custom VU-metering, phase alignment, and high-precision audio processing built on JUCE/C++.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Modern Scalable UI</h3>
+                    <p>Clean, hardware-inspired interface with 100% smooth scaling for crisp modern displays.</p>
+                </div>
             </div>
         </div>
+
+        <footer>
+            &copy; 2026 vir2oseSOUND / Waldemar Krucinski. All rights reserved.
+        </footer>
     </div>
-    <footer>
-        &copy; 2026 vir2oseSOUND / Waldemar Krucinski. All rights reserved.
-    </footer>
-    <script>
-        // Setzt automatisch den Pfad zum Release-Bild
-        document.getElementById('plugin-img').src = "https://github.com/vir2ose-code/VPPEQ-1-Equalizer/releases/download/v1.0.0/image.png"; 
-    </script>
 </body>
 </html>
