@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPPEQ-1 Equalizer | vir2oseSOUND</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --accent-blue: #00d2ff;
+            --accent-purple: #7928ca;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1100px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .preview-container {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 4rem;
+        }
+
+        .preview-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">vir2oseSOUND</div>
+    </header>
+
+    <div class="container">
+        <h1 class="hero-title">VPPEQ-1 Equalizer</h1>
+        <p class="hero-subtitle">
+            Professional Parametric Equalizer inspired by classic boutique hardware. 
+            Delivering musical warmth, harmonic saturation, and pristine clarity for modern producers.
+        </p>
+
+        <div class="cta-buttons">
+            <!-- Hier kannst du deinen Stripe-Link einfügen -->
+            <a href="https://buy.stripe.com/test_4gMeVc7i0dDi8Hf9p29sk00" class="btn btn-primary" target="_blank">Jetzt Kaufen (1,00 €)</a>
+            <a href="https://github.com/vir2ose-code/VPPEQ-1-Equalizer/releases" class="btn btn-secondary" target="_blank">14-Tage Trial Download</a>
+        </div>
+
+        <div class="preview-container">
+            <!-- Zieht sich das Vorschaubild direkt aus deinen GitHub Releases -->
+            <img src="https://raw.githubusercontent.com/vir2ose-code/VPPEQ-1-Equalizer/main/README.md" id="plugin-img" alt="VPPEQ-1 Equalizer UI" onerror="this.src='https://user-images.githubusercontent.com/placeholder.png';">
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Analog Character</h3>
+                <p>Transformer emulation with 4 legendary curves (SSL, NEVE, API, PULTEC) for smooth saturation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Pro DSP & Metering</h3>
+                <p>Custom VU-metering, phase alignment, and high-precision audio processing built on JUCE/C++.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Modern Scalable UI</h3>
+                <p>Clean, hardware-inspired interface with 100% smooth scaling for crisp modern displays.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 vir2oseSOUND / Waldemar Krucinski. All rights reserved.
+    </footer>
+
+    <script>
+        // Setzt automatisch den Pfad zum Release-Bild
+        document.getElementById('plugin-img').src = "https://github.com/vir2ose-code/VPPEQ-1-Equalizer/releases/download/v1.0.0/image.png"; 
+    </script>
+</body>
+</html>
