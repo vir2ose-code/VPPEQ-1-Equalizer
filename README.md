@@ -45,7 +45,7 @@ Visit our official boutique landing page to download the trial or purchase a lic
 
 ---
 
-## 📩 Support & Contact
+##  Support & Contact
 
 Developed with passion by **vir2oseSOUND / Waldemar Krucinski**.
 
